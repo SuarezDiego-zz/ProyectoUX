@@ -1,0 +1,43 @@
+/*
+Paleta de colores:
+(colores de mas claros a oscuros)
+Color principal 1=  #B0DAFA
+Color principal 2=  #5EB4F6
+Color principal 3=  #2198F3
+Color principal 4=  #0483E4
+Color principal 5=  #044678
+Color negativo 1=   #FFDCAE
+Color negativo 2=   #FFB757
+Color negativo 3=   #FF9A13
+Color negativo 4=   #FF9200
+Color negativo 5=   #BB6B00
+*/
+body{
+    background-color: #B0DAFA;
+}
+footer{
+    background-color: #044678;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
+}
+h1{
+    text-align: center;
+}
+.responisve_wrapper{
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit,minmax(3rem,1fr));
+}
+.itemsResponsive{
+    display: block;
+    margin: auto;
+    min-width: 2rem;
+    min-height: 2rem;
+    width: 5rem;
+    height: 5rem;
+    background-color: #FF9200;
+    border-radius: 20px;
+}
