@@ -25,7 +25,28 @@ footer{
 }
 h1{
     text-align: center;
+    font-size: 200%;
+    font-family: helvetica;
+    font-style: italic;
+    font-weight: bold;
+    color: #044678;
 }
+a{
+    font-size: 5vw;
+    font-family: helvetica;
+    font-style: italic;
+    font-weight: bold;
+    color: #044678;
+    text-decoration: none;
+}
+p{
+    font-size: 5vw;
+    font-family: helvetica;
+    font-weight: bold;
+    color: #044678;
+}
+
+/* grila responsiva*/
 .responisve_wrapper{
     display: grid;
     grid-gap: 2rem;
@@ -40,4 +61,59 @@ h1{
     height: 5rem;
     background-color: #FF9200;
     border-radius: 20px;
+}
+
+/* grilla normal*/
+.wrapper{
+    display: grid;
+}
+.item1{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.item2{
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+.item3{
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+.item4{
+    grid-column: 1/4;
+    grid-row: 2/3;
+    min-height: 25rem;/* ver */
+}
+
+/* nav ayuda*/
+#navAyuda{
+    background-color: #5EB4F6;
+    position: absolute; 
+    right: 0;
+    left: 0;
+    top: 0;
+    min-height: 2rem;
+}
+#itemAyuda1{
+    text-align: center;
+    border: 1px;
+    border-style: solid;
+    border-color: #044678;
+}
+#itemAyuda2{
+    text-align: center;
+    border: 1px;
+    border-style: solid;
+    border-color: #044678;
+}
+#itemAyuda3{
+    text-align: center;
+    border: 1px;
+    border-style: solid;
+    border-color: #044678;
+}
+#textoAyuda{
+    position: fixed;
+    top: 2rem;
+    width: 100%;
 }
