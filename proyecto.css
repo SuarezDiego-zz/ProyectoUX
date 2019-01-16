@@ -117,3 +117,9 @@ p{
     top: 2rem;
     width: 100%;
 }
+
+/* MAPA */
+#map {
+    height: 480px;  /* The height is 400 pixels */
+    width: 100%;  /* The width is the width of the web page */
+}
