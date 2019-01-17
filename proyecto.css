@@ -31,6 +31,16 @@ h1{
     font-weight: bold;
     color: #044678;
 }
+
+h2{
+    text-align: center;
+    font-size: 150%;
+    font-family: helvetica;
+    font-style: italic;
+    font-weight: bold;
+    color: #044678;
+}
+
 a{
     font-size: 5vw;
     font-family: helvetica;
@@ -44,6 +54,10 @@ p{
     font-family: helvetica;
     font-weight: bold;
     color: #044678;
+}
+
+hr{
+    border-color: #B0DAFA;
 }
 
 /* grila responsiva*/

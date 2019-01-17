@@ -1,0 +1,60 @@
+/* MAPA */
+#map {
+    height: 25vh;
+    width: 100%;  
+}
+
+/* MAPA RESPONSIVO */
+@media screen and (min-height: 700px) {
+    #map {
+        height: 30vh;
+    }
+}
+
+@media screen and (min-height: 1000px) {
+    #map {
+        height: 38vh;
+    }
+}
+
+/* Comentarios */
+.tip {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    background: transparent;
+    border: 10px solid #FF9200;
+}
+
+.tip-left {
+    top: 10px;
+    left: -25px;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;  
+}
+
+.dialogbox .body {
+    position: relative;
+    max-width: 300px;
+    height: auto;
+    margin: 20px 10px;
+    padding: 5px;
+    background-color: #FF9200;
+    border-radius: 3px;
+    border: 5px solid #FF9200;
+  }
+  
+  .body .message {
+    min-height: 30px;
+    border-radius: 3px;
+    font-family: Arial;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #044678;
+  }
+
+.lugar_info {
+    overflow: scroll;
+    height: 50vh;
+}
