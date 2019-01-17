@@ -3,9 +3,37 @@
 <head>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="proyecto.css">
+    
 </head>
 <body>
-    <div id="map"></div>	
+    <div id="map"></div>
+    <button id="boton_buscar" OnClick="mostrar_buscar()">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 310.42 310.42" style="enable-background:new 0 0 310.42 310.42;" xml:space="preserve">
+                <g>
+                    <g>
+                        <path d="M273.587,214.965c49.11-49.111,49.109-129.021,0-178.132c-49.111-49.111-129.02-49.111-178.13,0    C53.793,78.497,47.483,140.462,76.51,188.85c0,0,2.085,3.498-0.731,6.312c-16.065,16.064-64.263,64.263-64.263,64.263    c-12.791,12.79-15.836,30.675-4.493,42.02l1.953,1.951c11.343,11.345,29.229,8.301,42.019-4.49c0,0,48.096-48.097,64.128-64.128    c2.951-2.951,6.448-0.866,6.448-0.866C169.958,262.938,231.923,256.629,273.587,214.965z M118.711,191.71    c-36.288-36.288-36.287-95.332,0.001-131.62c36.288-36.287,95.332-36.288,131.619,0c36.288,36.287,36.288,95.332,0,131.62    C214.043,227.996,155,227.996,118.711,191.71z" style="fill: rgb(4, 70, 120);"></path>
+                        <g>
+                            <path d="M126.75,118.424c-1.689,0-3.406-0.332-5.061-1.031c-6.611-2.798-9.704-10.426-6.906-17.038     c17.586-41.559,65.703-61.062,107.261-43.476c6.611,2.798,9.704,10.426,6.906,17.038c-2.799,6.612-10.425,9.703-17.039,6.906     c-28.354-11.998-61.186,1.309-73.183,29.663C136.629,115.445,131.815,118.424,126.75,118.424z" style="fill: rgb(4, 70, 120);"></path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+    </button>
+    <div id="cont_buscador">
+            <button id="boton_cerrar_buscar" OnClick="cerrar_buscar()">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 27.965 27.965" style="enable-background:new 0 0 27.965 27.965;" xml:space="preserve">
+                        <g>
+                            <g id="c142_x">
+                                <path d="M13.98,0C6.259,0,0,6.261,0,13.983c0,7.721,6.259,13.982,13.98,13.982c7.725,0,13.985-6.262,13.985-13.982    C27.965,6.261,21.705,0,13.98,0z M19.992,17.769l-2.227,2.224c0,0-3.523-3.78-3.786-3.78c-0.259,0-3.783,3.78-3.783,3.78    l-2.228-2.224c0,0,3.784-3.472,3.784-3.781c0-0.314-3.784-3.787-3.784-3.787l2.228-2.229c0,0,3.553,3.782,3.783,3.782    c0.232,0,3.786-3.782,3.786-3.782l2.227,2.229c0,0-3.785,3.523-3.785,3.787C16.207,14.239,19.992,17.769,19.992,17.769z" style="fill: rgb(255, 154, 19);"></path>
+                            </g>
+                            <g id="Capa_1_104_">
+                            </g>
+                        </g>
+                    </svg>
+            </button>
+            <input id="buscador" type="text" name="buscador" placeholder=" Busca tu lugar">
+    </div>   
+
 </body>
 <footer>
     <div class="responisve_wrapper">
@@ -36,6 +64,24 @@
     <script src="./js/mapa.js"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPqKLAJsXvQVcGbfbP97uYwVw_SNW4CHc&callback=initMap">
+    </script>
+    <script>
+        var boton_b = document.getElementById("boton_buscar");
+        var buscador_b = document.getElementById("buscador");
+        var cerrar_b = document.getElementById("boton_cerrar_buscar");
+        var cont_b = document.getElementById("cont_buscador");
+        function mostrar_buscar () {
+            boton_b.style.visibility = 'hidden';
+            buscador_b.style.visibility = 'visible';
+            cerrar_b.style.visibility = 'visible';
+            cont_b.style.visibility = 'visible';
+        }
+        function cerrar_buscar () {
+            boton_b.style.visibility = 'visible';
+            buscador_b.style.visibility = 'hidden';
+            cerrar_b.style.visibility = 'hidden';
+            cont_b.style.visibility = 'hidden';
+        }
     </script>
 </footer>
 </html>

@@ -61,6 +61,7 @@ p{
     height: 5rem;
     background-color: #FF9200;
     border-radius: 20px;
+    border: none;
 }
 
 /* grilla normal*/
@@ -122,4 +123,52 @@ p{
 #map {
     height: 480px;  /* The height is 400 pixels */
     width: 100%;  /* The width is the width of the web page */
+}
+
+/* buscador*/
+#cont_buscador{
+    background-color: white;
+    position: absolute; 
+    right: 80px;
+    left: 10px;
+    top: 20px;
+    border-radius: 20px;
+    min-height: 40px;
+    visibility: hidden;
+}
+#buscador{
+    position: absolute; 
+    top: 2px;
+    left: 35px;
+    right: 80px;
+    background-color: white;
+    min-height: 2rem;
+    font-size: 5vw;
+    font-family: helvetica;
+    font-weight: bold;
+    color: #044678;
+    border-radius: 20px;
+    border: none;
+    visibility: hidden;
+}
+#boton_buscar{
+    position: absolute; 
+    right: 80px;
+    left: 10px;
+    top: 20px;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 30px;
+    background-color: #FF9200;
+    border: none;
+}
+#boton_cerrar_buscar{
+    background-color: white;
+    position: absolute; 
+    top: 0px;
+    width: 38px;
+    height: 38px;
+    border-radius: 30px;
+    border: none;
+    visibility: hidden;
 }
