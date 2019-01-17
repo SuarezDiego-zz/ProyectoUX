@@ -151,12 +151,12 @@ p{
 }
 #buscador{
     position: absolute; 
-    top: 2px;
-    left: 35px;
-    right: 80px;
+    top: 0px;
+    bottom: 0px;
+    left: 40px;
+    width: 90%;
     background-color: white;
     min-height: 2rem;
-    font-size: 5vw;
     font-family: helvetica;
     font-weight: bold;
     color: #044678;
