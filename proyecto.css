@@ -12,6 +12,11 @@ Color negativo 3=   #FF9A13
 Color negativo 4=   #FF9200
 Color negativo 5=   #BB6B00
 */
+html{
+    margin: 0px;
+    border: 0px;
+    padding: 0px;    
+}
 body{
     background-color: #B0DAFA;
 }
@@ -191,21 +196,11 @@ hr{
 
 /* MAPA */
 #map {
-    height: 75vh;
-    width: 100%;  
-}
-
-/* MAPA RESPONSIVO */
-@media screen and (min-height: 700px) {
-    #map {
-        height: 80vh;
-    }
-}
-
-@media screen and (min-height: 1000px) {
-    #map {
-        height: 88vh;
-    }
+    position: absolute; 
+    right: 0;
+    left: 0;
+    top: 0;
+    height: 100%;
 }
 
 /* buscador*/
