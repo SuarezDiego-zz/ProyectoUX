@@ -8,7 +8,7 @@
 <body>
     <div id="map"></div>
     <div id="cont_nav">
-        <button id="boton_menu">
+        <button id="boton_menu" OnClick="aparecer_desaparecer_menu()">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 60.123 60.123" style="enable-background:new 0 0 60.123 60.123;" xml:space="preserve">
                 <g>
                     <path d="M57.124,51.893H16.92c-1.657,0-3-1.343-3-3s1.343-3,3-3h40.203c1.657,0,3,1.343,3,3S58.781,51.893,57.124,51.893z" style="fill: rgb(255, 255, 255);"></path>
@@ -35,7 +35,7 @@
             </div>
             <input id="buscador" type="text" name="buscador" placeholder="Busca tu lugar">
         </div>
-        <div id="icono_ayuda">
+        <div id="icono_ayuda" OnClick=" location.href='ayuda.html'">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 426.667 426.667" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
                 <g>
                     <g>
@@ -55,6 +55,13 @@
             </svg>
         </div>
     </div>
+    <div id="opciones_menu">
+        <a class="texto_menu" href="ayuda.html">• Como usar</a>
+        <br><br>
+        <a class="texto_menu" href="ayuda_contacto.html">• Contacto</a>
+        <br><br>
+        <a class="texto_menu" href="ayuda_acerca.html">• Acerca de</a>
+    </div>
 </body>
 <footer>
     <button id="boton_agregar_lugar">
@@ -65,14 +72,6 @@
         </svg>
     </button>
     <!--
-    <div class="responisve_wrapper">
-        <button class="itemsResponsive" OnClick=" location.href='home.html'">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 306.773 306.773" style="enable-background:new 0 0 306.773 306.773;" xml:space="preserve">
-                    <g>
-                        <path style="fill: rgb(94, 180, 246);" d="M302.93,149.794c5.561-6.116,5.024-15.49-1.199-20.932L164.63,8.898   c-6.223-5.442-16.2-5.328-22.292,0.257L4.771,135.258c-6.092,5.585-6.391,14.947-0.662,20.902l3.449,3.592   c5.722,5.955,14.971,6.665,20.645,1.581l10.281-9.207v134.792c0,8.27,6.701,14.965,14.965,14.965h53.624   c8.264,0,14.965-6.695,14.965-14.965v-94.3h68.398v94.3c-0.119,8.264,5.794,14.959,14.058,14.959h56.828   c8.264,0,14.965-6.695,14.965-14.965V154.024c0,0,2.84,2.488,6.343,5.567c3.497,3.073,10.842,0.609,16.403-5.513L302.93,149.794z"></path>
-                    </g>
-                </svg>
-        </button>
         <button class="itemsResponsive" OnClick=" location.href='lugar_info.html'">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 1 511 511.999">
                     <g>
@@ -80,14 +79,6 @@
                     </g>
                 </svg>
         </button>
-        <button class="itemsResponsive"  OnClick=" location.href='ayuda.html'">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 92 92" style="enable-background:new 0 0 92 92;" xml:space="preserve">
-                    <g>
-                        <path style="fill: rgb(94, 180, 246);" d="M45.386,0.004C19.983,0.344-0.333,21.215,0.005,46.619c0.34,25.393,21.209,45.715,46.611,45.377   c25.398-0.342,45.718-21.213,45.38-46.615C91.656,19.986,70.786-0.335,45.386,0.004z M45.25,74l-0.254-0.004   c-3.912-0.116-6.67-2.998-6.559-6.852c0.109-3.788,2.934-6.538,6.717-6.538l0.227,0.004c4.021,0.119,6.748,2.972,6.635,6.937   C51.904,71.346,49.123,74,45.25,74z M61.705,41.341c-0.92,1.307-2.943,2.93-5.492,4.916l-2.807,1.938   c-1.541,1.198-2.471,2.325-2.82,3.434c-0.275,0.873-0.41,1.104-0.434,2.88l-0.004,0.451H39.43l0.031-0.907   c0.131-3.728,0.223-5.921,1.768-7.733c2.424-2.846,7.771-6.289,7.998-6.435c0.766-0.577,1.412-1.234,1.893-1.936   c1.125-1.551,1.623-2.772,1.623-3.972c0-1.665-0.494-3.205-1.471-4.576c-0.939-1.323-2.723-1.993-5.303-1.993   c-2.559,0-4.311,0.812-5.359,2.478c-1.078,1.713-1.623,3.512-1.623,5.35v0.457H27.936l0.02-0.477   c0.285-6.769,2.701-11.643,7.178-14.487C37.947,18.918,41.447,18,45.531,18c5.346,0,9.859,1.299,13.412,3.861   c3.6,2.596,5.426,6.484,5.426,11.556C64.369,36.254,63.473,38.919,61.705,41.341z"></path>
-                    </g>
-                </svg>
-         </button>
-    </div>
     -->
 </footer>
 
@@ -95,5 +86,47 @@
  <script src="./js/mapa.js"></script>
  <script async defer
  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPqKLAJsXvQVcGbfbP97uYwVw_SNW4CHc&callback=initMap">
+ </script>
+
+ <script>
+     var cont_click_menu=0;
+     var opciones_m = document.getElementById("opciones_menu");
+     var texto_m = document.getElementsByClassName("texto_menu");
+     var i;
+     function aparecer_desaparecer_menu(){
+        if(cont_click_menu==0){
+            for (i = 0; i < texto_m.length; i++) {
+                texto_m[i].style.visibility = 'hidden';
+            }
+            opciones_m.style.visibility = 'visible';
+            opciones_m.classList.add('animacion_aparecer_izq');
+            setTimeout(function(){
+                for (i = 0; i < texto_m.length; i++) {
+                texto_m[i].style.visibility = 'visible';
+                }
+            },300);
+            cont_click_menu++;
+        }
+        else if(cont_click_menu==1){
+            for (i = 0; i < texto_m.length; i++) {
+                texto_m[i].style.visibility = 'hidden';
+            }
+            opciones_m.classList.remove('animacion_aparecer_izq');
+            opciones_m.classList.add('animacion_desaparecer_izq');
+            setTimeout(function(){opciones_m.style.visibility = 'hidden';},400);
+            cont_click_menu++;
+        }
+        else{
+            opciones_m.style.visibility = 'visible';
+            opciones_m.classList.remove('animacion_desaparecer_izq');
+            opciones_m.classList.add('animacion_aparecer_izq');
+            setTimeout(function(){
+                for (i = 0; i < texto_m.length; i++) {
+                texto_m[i].style.visibility = 'visible';
+                }
+            },300);
+            cont_click_menu=1;
+        }
+     }
  </script>
 </html>
