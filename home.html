@@ -2,11 +2,11 @@
 <html>
 <head>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="proyecto.css">
-    
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css">
 </head>
-<body>
-    <div id="map"></div>
+<body onload="initialize_map(); add_map_point(-33.449725110186826, -70.68698197603226); add_map_point(-33.449933239678856, -70.68665206432343); add_map_point(-33.44969825473212, -70.68538337945938)">
+    <div id="map" style="width: 100vw; height: 100vh;"></div>
     <div id="cont_nav">
         <button id="boton_menu" OnClick="aparecer_desaparecer_menu()">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 60.123 60.123" style="enable-background:new 0 0 60.123 60.123;" xml:space="preserve">
@@ -67,7 +67,7 @@
     <button id="boton_agregar_lugar">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 1 511 511.999">
             <g>
-                <path d="m226.429688 173.5625c0-27.734375-22.5625-50.296875-50.296876-50.296875-27.734374 0-50.296874 22.5625-50.296874 50.296875s22.5625 50.296875 50.296874 50.296875c27.734376 0 50.296876-22.5625 50.296876-50.296875zm0 0" style="fill: rgb(255, 255, 255);"></path><path d="m315.375 248.839844c6.710938 0 13.3125.464844 19.785156 1.34375 10.878906-23.21875 16.601563-48.789063 16.601563-74.550782.003906-96.84375-78.785157-175.632812-175.628907-175.632812-96.847656 0-175.632812 78.789062-175.632812 175.632812 0 29.078126 7.292969 57.9375 21.089844 83.464844l132.625 239.871094c4.402344 7.972656 12.800781 12.925781 21.917968 12.925781 9.117188 0 17.515626-4.953125 21.914063-12.917969l5.328125-9.640624c-21.433594-25.46875-34.371094-58.3125-34.371094-94.121094 0-80.710938 65.664063-146.375 146.371094-146.375zm-219.546875-75.277344c0-44.277344 36.027344-80.300781 80.304687-80.300781 44.277344 0 80.300782 36.023437 80.300782 80.300781 0 44.28125-36.023438 80.304688-80.300782 80.304688-44.277343 0-80.304687-36.023438-80.304687-80.304688zm0 0" style="fill: rgb(255, 255, 255);"></path><path d="m315.375 278.425781c-64.394531 0-116.785156 52.390625-116.785156 116.785157 0 64.398437 52.390625 116.789062 116.785156 116.789062 64.398438 0 116.789062-52.390625 116.789062-116.789062 0-64.394532-52.390624-116.785157-116.789062-116.785157zm35.949219 131.789063h-20.945313v20.945312c0 8.285156-6.714844 15.003906-15 15.003906s-15.003906-6.71875-15.003906-15.003906v-20.945312h-20.945312c-8.285157 0-15.003907-6.71875-15.003907-15.003906 0-8.285157 6.71875-15 15.003907-15h20.945312v-20.945313c0-8.285156 6.71875-15.003906 15.003906-15.003906s15 6.71875 15 15.003906v20.945313h20.945313c8.285156 0 15.003906 6.714843 15.003906 15 0 8.285156-6.71875 15.003906-15.003906 15.003906zm0 0" style="fill: rgb(255, 255, 255);"></path>
+                <path d="m226.429688 173.5625c0-27.734375-22.5625-50.296875-50.296876-50.296875-27.734374 0-50.296874 22.5625-50.296874 50.296875s22.5625 50.296875 50.296874 50.296875c27.734376 0 50.296876-22.5625 50.296876-50.296875zm0 0" style="fill: rgb(255, 255, 255);"></path><path d="m315.375 248.839844c6.710938 0 13.3125.464844 19.785156 1.34375 10.878906-23.21875 16.601563-48.789063 16.601563-74.550782.003906-96.84375-78.785157-175.632812-175.628907-175.632812-96.847656 0-175.632812 78.789062-175.632812 175.632812 0 29.078126 7.292969 57.9375 21.089844 83.464844l132.625 239.871094c4.402344 7.972656 12.800781 12.925781 21.917968 12.925781 9.117188 0 17.515626-4.953125 21.914063-12.917969l5.328125-9.640624c-21.433594-25.46875-34.371094-58.3125-34.371094-94.121094 0-80.710938 65.664063-146.375 146.371094-146.375zm-219.546875-75.277344c0-44.277344 36.027344-80.300781 80.304687-80.300781 44.277344 0 80.300782 36.023437 80.300782 80.300781 0 44.28125-36.023438 80.304688-80.300782 80.304688-44.277343 0-80.304687-36.023438-80.304687-80.304688zm0 0" style="fill: rgba(4,70,120,1);"></path><path d="m315.375 278.425781c-64.394531 0-116.785156 52.390625-116.785156 116.785157 0 64.398437 52.390625 116.789062 116.785156 116.789062 64.398438 0 116.789062-52.390625 116.789062-116.789062 0-64.394532-52.390624-116.785157-116.789062-116.785157zm35.949219 131.789063h-20.945313v20.945312c0 8.285156-6.714844 15.003906-15 15.003906s-15.003906-6.71875-15.003906-15.003906v-20.945312h-20.945312c-8.285157 0-15.003907-6.71875-15.003907-15.003906 0-8.285157 6.71875-15 15.003907-15h20.945312v-20.945313c0-8.285156 6.71875-15.003906 15.003906-15.003906s15 6.71875 15 15.003906v20.945313h20.945313c8.285156 0 15.003906 6.714843 15.003906 15 0 8.285156-6.71875 15.003906-15.003906 15.003906zm0 0" style="fill: rgba(4,70,120,1);"></path>
             </g>
         </svg>
     </button>
@@ -83,50 +83,7 @@
 </footer>
 
  <!-- Javascript imports -->
+ <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
  <script src="./js/mapa.js"></script>
- <script async defer
- src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPqKLAJsXvQVcGbfbP97uYwVw_SNW4CHc&callback=initMap">
- </script>
-
- <script>
-     var cont_click_menu=0;
-     var opciones_m = document.getElementById("opciones_menu");
-     var texto_m = document.getElementsByClassName("texto_menu");
-     var i;
-     function aparecer_desaparecer_menu(){
-        if(cont_click_menu==0){
-            for (i = 0; i < texto_m.length; i++) {
-                texto_m[i].style.visibility = 'hidden';
-            }
-            opciones_m.style.visibility = 'visible';
-            opciones_m.classList.add('animacion_aparecer_izq');
-            setTimeout(function(){
-                for (i = 0; i < texto_m.length; i++) {
-                texto_m[i].style.visibility = 'visible';
-                }
-            },300);
-            cont_click_menu++;
-        }
-        else if(cont_click_menu==1){
-            for (i = 0; i < texto_m.length; i++) {
-                texto_m[i].style.visibility = 'hidden';
-            }
-            opciones_m.classList.remove('animacion_aparecer_izq');
-            opciones_m.classList.add('animacion_desaparecer_izq');
-            setTimeout(function(){opciones_m.style.visibility = 'hidden';},400);
-            cont_click_menu++;
-        }
-        else{
-            opciones_m.style.visibility = 'visible';
-            opciones_m.classList.remove('animacion_desaparecer_izq');
-            opciones_m.classList.add('animacion_aparecer_izq');
-            setTimeout(function(){
-                for (i = 0; i < texto_m.length; i++) {
-                texto_m[i].style.visibility = 'visible';
-                }
-            },300);
-            cont_click_menu=1;
-        }
-     }
- </script>
+<script src="./js/menu.js"></script>
 </html>

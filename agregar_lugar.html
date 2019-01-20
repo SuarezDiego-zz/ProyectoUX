@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css">
+</head>
+<body onload="initialize_map(); add_map_point(-33.449725110186826, -70.68698197603226); add_map_point(-33.449933239678856, -70.68665206432343); add_map_point(-33.44969825473212, -70.68538337945938)">
+    <div id="map" style="width: 100vw; height: 100vh;"></div>
+    <div id="boton_agregar">agregar</div>
+    <img id="mapa_marcador" src="./img/icon_current_marker.png">
+    <div id="cont_nav">
+        <button id="boton_menu" OnClick="aparecer_desaparecer_menu()">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 60.123 60.123" style="enable-background:new 0 0 60.123 60.123;" xml:space="preserve">
+                <g>
+                    <path d="M57.124,51.893H16.92c-1.657,0-3-1.343-3-3s1.343-3,3-3h40.203c1.657,0,3,1.343,3,3S58.781,51.893,57.124,51.893z" style="fill: rgb(255, 255, 255);"></path>
+                    <path d="M57.124,33.062H16.92c-1.657,0-3-1.343-3-3s1.343-3,3-3h40.203c1.657,0,3,1.343,3,3   C60.124,31.719,58.781,33.062,57.124,33.062z" style="fill: rgb(255, 255, 255);"></path>
+                    <path d="M57.124,14.231H16.92c-1.657,0-3-1.343-3-3s1.343-3,3-3h40.203c1.657,0,3,1.343,3,3S58.781,14.231,57.124,14.231z" style="fill: rgb(255, 255, 255);"></path>
+                    <circle cx="4.029" cy="11.463" r="4.029" style="fill: rgb(255, 255, 255);"></circle>
+                    <circle cx="4.029" cy="30.062" r="4.029" style="fill: rgb(255, 255, 255);"></circle>
+                    <circle cx="4.029" cy="48.661" r="4.029" style="fill: rgb(255, 255, 255);"></circle>
+                </g>
+            </svg>
+        </button>
+        <div id="nav_buscador">
+            <div id="icono_buscar">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 310.42 310.42" style="enable-background:new 0 0 310.42 310.42;" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path d="M273.587,214.965c49.11-49.111,49.109-129.021,0-178.132c-49.111-49.111-129.02-49.111-178.13,0    C53.793,78.497,47.483,140.462,76.51,188.85c0,0,2.085,3.498-0.731,6.312c-16.065,16.064-64.263,64.263-64.263,64.263    c-12.791,12.79-15.836,30.675-4.493,42.02l1.953,1.951c11.343,11.345,29.229,8.301,42.019-4.49c0,0,48.096-48.097,64.128-64.128    c2.951-2.951,6.448-0.866,6.448-0.866C169.958,262.938,231.923,256.629,273.587,214.965z M118.711,191.71    c-36.288-36.288-36.287-95.332,0.001-131.62c36.288-36.287,95.332-36.288,131.619,0c36.288,36.287,36.288,95.332,0,131.62    C214.043,227.996,155,227.996,118.711,191.71z" style="fill: rgb(4, 70, 120);"></path>
+                            <g>
+                                <path d="M126.75,118.424c-1.689,0-3.406-0.332-5.061-1.031c-6.611-2.798-9.704-10.426-6.906-17.038     c17.586-41.559,65.703-61.062,107.261-43.476c6.611,2.798,9.704,10.426,6.906,17.038c-2.799,6.612-10.425,9.703-17.039,6.906     c-28.354-11.998-61.186,1.309-73.183,29.663C136.629,115.445,131.815,118.424,126.75,118.424z" style="fill: rgb(4, 70, 120);"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <input id="buscador" type="text" name="buscador" placeholder="Busca tu lugar">
+        </div>
+        <div id="icono_ayuda" OnClick=" location.href='ayuda.html'">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 426.667 426.667" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
+                <g>
+                    <g>
+                        <rect x="192" y="298.667" width="42.667" height="42.667" style="fill: rgb(255, 255, 255);"></rect>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <path d="M213.333,0C95.513,0,0,95.513,0,213.333s95.513,213.333,213.333,213.333s213.333-95.513,213.333-213.333    S331.154,0,213.333,0z M213.333,388.053c-96.495,0-174.72-78.225-174.72-174.72s78.225-174.72,174.72-174.72    c96.446,0.117,174.602,78.273,174.72,174.72C388.053,309.829,309.829,388.053,213.333,388.053z" style="fill: rgb(255, 255, 255);"></path>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <path d="M296.32,150.4c-10.974-45.833-57.025-74.091-102.858-63.117c-38.533,9.226-65.646,43.762-65.462,83.384h42.667    c2.003-23.564,22.729-41.043,46.293-39.04s41.043,22.729,39.04,46.293c-4.358,21.204-23.38,36.169-45.013,35.413    c-10.486,0-18.987,8.501-18.987,18.987v0v45.013h42.667v-24.32C279.787,241.378,307.232,195.701,296.32,150.4z" style="fill: rgb(255, 255, 255);"></path>
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <div id="opciones_menu">
+        <a class="texto_menu" href="ayuda.html">• Como usar</a>
+        <br><br>
+        <a class="texto_menu" href="ayuda_contacto.html">• Contacto</a>
+        <br><br>
+        <a class="texto_menu" href="ayuda_acerca.html">• Acerca de</a>
+    </div>
+</body>
+<footer>
+    <button id="boton_agregar_lugar">
+        cancelar
+    </button>
+
+</footer>
+
+ <!-- Javascript imports -->
+ <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+ <script src="./js/mapa.js"></script>
+<script src="./js/menu.js"></script>
+</html>
