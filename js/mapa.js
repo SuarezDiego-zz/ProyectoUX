@@ -4,6 +4,7 @@ var mapLng = -70.68698197603226;
 var mapDefaultZoom = 18;
 function initialize_map() {
     map = new ol.Map({
+        controls: [],
         target: "map",
         layers: [
             new ol.layer.Tile({
