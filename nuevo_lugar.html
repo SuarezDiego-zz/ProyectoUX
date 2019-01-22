@@ -15,25 +15,31 @@
     <div class="lugar_info">
         <h2>Agregar nueva información</h2>
         <p>
-            Asigna un nombre al lugar:
+            • Asigna un nombre al lugar:
         </p>
         <input id="campo_texto" placeholder="Estadio USACH" size="35" />
         <p>
-            Toca un icono para notificar la accesibilidad del lugar:
+            • Toca un icono para notificar la accesibilidad del lugar:
         </p>
 
         <div style="display:flex; flex-direction: row; justify-content: center; align-items: center;">
             <figure>
-                <img src="./img/icon_rampla.png"/>
-                <figcaption> Rampla </figcaption>
+                <img id="img_rampla" src="./img/icon_rampla_gris.png" onclick="this.src='./img/icon_rampla.png'"/>
             </figure>
             <figure style="margin-left: -5px">
-                <img src="./img/icon_banos_gris.png"/>
-                <figcaption> Baños </figcaption>
+                <img id="img_banos" src="./img/icon_banos_gris.png" onclick="this.src='./img/icon_banos.png'"/>
             </figure>
             <figure style="margin-left: -5px">
-                <img src="./img/icon_ascensor.png"/>
-                <figcaption> Ascensor </figcaption>
+                <img id="img_ascensor" src="./img/icon_ascensor_gris.png" onclick="this.src='./img/icon_ascensor.png'"/>
+            </figure>
+        </div>
+
+        <div style="display:flex; flex-direction: row; justify-content: center; align-items: center;">
+            <figure>
+                <img id="img_estacionamiento" src="./img/icon_estacionamiento_gris.png" onclick="this.src='./img/icon_estacionamiento.png'"/>
+            </figure>
+            <figure style="margin-left: -5px">
+                <img id="img_salvaescalera" src="./img/icon_salvaescalera_gris.png" onclick="this.src='./img/icon_salvaescalera.png'"/>
             </figure>
         </div>
 
@@ -45,6 +51,7 @@
 </body>
 
 <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
- <script src="./js/mapa.js"></script>
+<script src="./js/mapa.js"></script>
+<script src="./js/agregar_lugar.js"></script>
 
 </html>
