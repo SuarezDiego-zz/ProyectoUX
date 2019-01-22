@@ -12,6 +12,9 @@ Color negativo 3=   #FF9A13 rgba(255,154,19,1.0)
 Color negativo 4=   #FF9200 rgba(255,146,0,1.0)
 Color negativo 5=   #BB6B00 rgba(187,107,0,1.0)
 */
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 html{
     margin: 0px;
     border: 0px;
@@ -23,33 +26,26 @@ body{
 h1{
     text-align: center;
     font-size: 10vw;
-    font-family: helvetica;
-    font-style: italic;
-    font-weight: bold;
+    font-family: 'Lato', sans-serif;
     color: white;
 }
 
 h2{
     text-align: center;
-    font-size: 150%;
-    font-family: helvetica;
-    font-style: italic;
-    font-weight: bold;
+    font-size: 6vw;
+    font-family: 'Lato', sans-serif;
     color: white;
 }
 
 a{
     font-size: 6vw;
-    font-family: helvetica;
-    font-style: italic;
-    font-weight: bold;
+    font-family: 'Lato', sans-serif;
     color: white;
     text-decoration: none;
 }
 p{
     font-size: 5vw;
-    font-family: helvetica;
-    font-weight: bold;
+    font-family: 'Lato', sans-serif;
     color: white;
 }
 pre{
@@ -60,6 +56,12 @@ pre{
 }
 hr{
     border-color: #B0DAFA;
+}
+
+figcaption{
+    color: white;
+    font-family: helvetica;
+    font-size: 4vw;
 }
 
 /* grila responsiva*/
@@ -227,6 +229,14 @@ hr{
     z-index: -10;
 }
 
+#ir_informacion{
+    position: absolute;
+    bottom: 45%;
+    right: 45%;
+    cursor: pointer;
+    color: transparent;
+}
+
 .ol-attribution{
     visibility: hidden;
 }
@@ -234,7 +244,7 @@ hr{
 /* marcador mapa */
 #mapa_marcador{
     right: 50%;
-    bottom: 35%;
+    bottom: 38%;
     padding: 10px 10px 10px;
     position: absolute;
     z-index: 10;
@@ -421,4 +431,9 @@ hr{
 }
 .animacion_desaparecer_izq{
     animation: desaparecer_izq 0.5s;
+}
+
+/* INFORMACION LUGAR */
+#volver_mapa {
+    color: #044678;
 }

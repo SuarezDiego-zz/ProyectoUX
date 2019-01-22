@@ -20,21 +20,40 @@ function initialize_map() {
     });
 }
 
-function add_map_point(lat, lng) {
-    var vectorLayer = new ol.layer.Vector({
-        source:new ol.source.Vector({
-            features: [new ol.Feature({
-                geometry: new ol.geom.Point(ol.proj.transform([parseFloat(lng), parseFloat(lat)], 'EPSG:4326', 'EPSG:3857')),
-            })]
-        }),
-        style: new ol.style.Style({
-                image: new ol.style.Icon({
-                anchor: [0.5, 0.5],
-                anchorXUnits: "fraction",
-                anchorYUnits: "fraction",
-                src: "https://img.icons8.com/ultraviolet/48/000000/marker.png"
+function add_map_point(lat, lng, color) {
+    if(color){
+        var vectorLayer = new ol.layer.Vector({
+            source:new ol.source.Vector({
+                features: [new ol.Feature({
+                    geometry: new ol.geom.Point(ol.proj.transform([parseFloat(lng), parseFloat(lat)], 'EPSG:4326', 'EPSG:3857')),
+                })]
+            }),
+            style: new ol.style.Style({
+                    image: new ol.style.Icon({
+                    anchor: [0.5, 0.5],
+                    anchorXUnits: "fraction",
+                    anchorYUnits: "fraction",
+                    src: "https://img.icons8.com/color/48/000000/marker.png"
+                })
             })
-        })
-    });
+        });
+    }
+    else{
+        var vectorLayer = new ol.layer.Vector({
+            source:new ol.source.Vector({
+                features: [new ol.Feature({
+                    geometry: new ol.geom.Point(ol.proj.transform([parseFloat(lng), parseFloat(lat)], 'EPSG:4326', 'EPSG:3857')),
+                })]
+            }),
+            style: new ol.style.Style({
+                    image: new ol.style.Icon({
+                    anchor: [0.5, 0.5],
+                    anchorXUnits: "fraction",
+                    anchorYUnits: "fraction",
+                    src: "https://img.icons8.com/ultraviolet/48/000000/marker.png"
+                })
+            })
+        });
+    }
     map.addLayer(vectorLayer);
 }

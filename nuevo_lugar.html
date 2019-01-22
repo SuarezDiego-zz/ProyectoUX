@@ -13,9 +13,13 @@
     </a>
     <div id="map" style="width: 100vw; height: 30vh;"></div>    
     <div class="lugar_info">
-        <h2>Departamento de Informática</h2>
+        <h2>Agregar nueva información</h2>
         <p>
-            • Tipos de accesibilidad en el lugar
+            Asigna un nombre al lugar:
+        </p>
+        <input id="campo_texto" placeholder="Estadio USACH" size="35" />
+        <p>
+            Toca un icono para notificar la accesibilidad del lugar:
         </p>
 
         <div style="display:flex; flex-direction: row; justify-content: center; align-items: center;">
@@ -24,7 +28,7 @@
                 <figcaption> Rampla </figcaption>
             </figure>
             <figure style="margin-left: -5px">
-                <img src="./img/icon_banos.png"/>
+                <img src="./img/icon_banos_gris.png"/>
                 <figcaption> Baños </figcaption>
             </figure>
             <figure style="margin-left: -5px">
@@ -33,32 +37,10 @@
             </figure>
         </div>
 
-        <hr> </hr>
-
-        <p>• Comentarios</p>
-        <div class="dialogbox">
-            <div class="body">
-                <span class="tip tip-left"></span>
-                <div class="message">
-                    <span>No se puede subir al segundo piso :(</span>
-                </div>
-            </div>
-        </div>
-        <div class="dialogbox">
-            <div class="body">
-                <span class="tip tip-left"></span>
-                <div class="message">
-                    <span>Al lado del baño hay asientos de espera 😀 </span>
-                </div>
-            </div>
+        <div style="display:flex; flex-direction: column; justify-content: center; align-items: center;">
+            <button id="boton_comentario" OnClick=" location.href='home.html'" >Guardar</button>
         </div>
 
-        <div style="display:flex; flex-direction: row; justify-content: center; align-items: center;">
-            <input id="campo_texto" placeholder="Comenta sobre el lugar" size="35" />
-            <a id=icono_comentar href="home.html"> 
-                <img style="cursor: pointer; margin-top: 20%; margin-left: 20%" src="./img/icon_send.png">
-            </a>
-        </div>
     </div>
 </body>
 
