@@ -218,6 +218,16 @@ figcaption{
     max-width: 100%;
     max-height: 100%;
 }
+#boton_regreso{
+    background: none;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    min-height: 2rem;
+    min-width: 3rem;
+    border: none;
+}
 /* MAPA */
 #map {
     position: absolute;
@@ -348,7 +358,7 @@ figcaption{
     right: 60%;
     left: 0px;
     top: 4rem;
-    height: 45%;
+    height: 13rem;
     visibility: hidden;
 }
 .texto_menu{
