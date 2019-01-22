@@ -173,7 +173,7 @@ figcaption{
     grid-column: 1/11;
     grid-row: 3/4;
     margin: 5%;
-    max-height: 95%;
+    max-height: 72%;
     overflow: scroll;
 }
 
